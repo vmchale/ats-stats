@@ -12,4 +12,4 @@ stats-export.c: stats-export.fut
 	futhark opencl --library $<
 
 clean:
-	@rm -rf lib *.c *.so stats-export.h
+	@rm -rf lib *.c *.so *.h
