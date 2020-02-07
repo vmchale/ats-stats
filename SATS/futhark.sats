@@ -84,5 +84,11 @@ fn futhark_context_pause_profiling(p : !futctxptr) : void =
 fn futhark_context_unpause_profiling(p : !futctxptr) : void =
   "ext#"
 
+fn futhark_context_clear_caches(p : !futctxptr) : int =
+  "ext#"
+
+fn futhark_context_get_command_queue(p : !futctxptr) : cl_cmd_queue =
+  "ext#"
+
 fn futhark_debugging_report(p : !futctxptr) : void =
   "ext#"
