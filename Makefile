@@ -1,15 +1,18 @@
 .PHONY: clean
 
-all: futstats.h libfutstats.so
+all: target/lib/libfutstats.so
 
-futstats.h: stats-export.c
-	cp $< $@
+target/lib:
+	mkdir -p $@
 
-libfutstats.so: stats-export.c
+target/include:
+	mkdir -p $@
+
+target/lib/libfutstats.so: target/include/futstats.c target/lib
 	gcc $< -o $@ -fPIC -shared
 
-stats-export.c: stats-export.fut
-	futhark opencl --library $<
+target/include/futstats.c: stats-export.fut target/include
+	futhark opencl --library $< -o target/include/futstats
 
 clean:
-	@rm -rf lib *.c *.so *.h
+	@rm -rf lib *.c *.so *.h .atspkg target tags
