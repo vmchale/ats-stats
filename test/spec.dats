@@ -7,4 +7,3 @@ implement main0 () =
     val () = futhark_context_free(ctx)
     val () = futhark_context_config_free(ctx_cfg)
   }
-
