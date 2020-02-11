@@ -1,5 +1,6 @@
 staload "SATS/futhark.sats"
 staload "SATS/futhark-arr.sats"
+staload "SATS/futhark-stats.sats"
 
 implement main0 () =
   {
