@@ -1,14 +1,43 @@
 staload "SATS/futhark-types.sats"
 
-// TODO: float? >> _ or sdmething that indicates it's filled
-vtypedef fptr(l: addr) = (float? @ l | ptr(l))
-vtypedef dptr(l: addr) = (double? @ l | ptr(l))
-
-// TODO: is the #[l:addr] correct?
-fn futhark_entry_mean_f32 {m:nat}{l:addr}(p : !futctxptr, out : (float? @ l | ptr(l)), f32_arrptr(m)) :
-  (float @ l | int) =
+fn futhark_entry_mean_f32 {m:nat}(p : !futctxptr, out : (&float? >> _), inp : !f32_arrptr(m)) : int =
   "ext#"
 
-fn futhark_entry_mean_f64 {m:nat}{l:addr}(p : !futctxptr, out : (double? @ l | ptr(l)), f64_arrptr(m)) :
-  (double @ l | int) =
+fn futhark_entry_mean_f64 {m:nat}(p : !futctxptr, out : (&double? >> _), inp : !f64_arrptr(m)) : int =
+  "ext#"
+
+fn futhark_entry_gmean_f32 {m:nat}(p : !futctxptr, out : (&float? >> _), inp : !f32_arrptr(m)) : int =
+  "ext#"
+
+fn futhark_entry_gmean_f64 {m:nat}(p : !futctxptr, out : (&double? >> _), inp : !f64_arrptr(m)) : int =
+  "ext#"
+
+fn futhark_entry_hmean_f32 {m:nat}(p : !futctxptr, out : (&float? >> _), inp : !f32_arrptr(m)) : int =
+  "ext#"
+
+fn futhark_entry_hmean_f64 {m:nat}(p : !futctxptr, out : (&double? >> _), inp : !f64_arrptr(m)) : int =
+  "ext#"
+
+fn futhark_entry_qmean_f32 {m:nat}(p : !futctxptr, out : (&float? >> _), inp : !f32_arrptr(m)) : int =
+  "ext#"
+
+fn futhark_entry_qmean_f64 {m:nat}(p : !futctxptr, out : (&double? >> _), inp : !f64_arrptr(m)) : int =
+  "ext#"
+
+fn futhark_entry_variance_f32 {m:nat}(p : !futctxptr, out : (&float? >> _), inp : !f32_arrptr(m)) : int =
+  "ext#"
+
+fn futhark_entry_variance_f64 {m:nat}(p : !futctxptr, out : (&double? >> _), inp : !f64_arrptr(m)) : int =
+  "ext#"
+
+fn futhark_entry_stddev_f32 {m:nat}(p : !futctxptr, out : (&float? >> _), inp : !f32_arrptr(m)) : int =
+  "ext#"
+
+fn futhark_entry_stddev_f64 {m:nat}(p : !futctxptr, out : (&double? >> _), inp : !f64_arrptr(m)) : int =
+  "ext#"
+
+fn futhark_entry_variance_pop_f32 {m:nat}(p : !futctxptr, out : (&float? >> _), inp : !f32_arrptr(m)) : int =
+  "ext#"
+
+fn futhark_entry_variance_pop_f64 {m:nat}(p : !futctxptr, out : (&double? >> _), inp : !f64_arrptr(m)) : int =
   "ext#"
