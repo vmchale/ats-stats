@@ -1,6 +1,6 @@
 staload "SATS/futhark-types.sats"
 
-// technically should be int not int64 but eh
+// technically should be int not int64 but nothing bad will happen on 64-bit architectures
 fn futhark_new_f32_1d {m:nat}(p : !futctxptr, inp : !arrayptr(float, m), int(m)) : f32_arrptr(m) =
   "ext#"
 

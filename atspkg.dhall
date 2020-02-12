@@ -10,5 +10,7 @@ in    prelude.default
             }
         ]
       , cflags = [ "-O2", "-L./target/lib", "-lfutstats", "-lOpenCL", "-lm" ]
+      , compiler = [ 0, 4, 0 ]
+      , version = [ 0, 3, 13 ]
       , atsLib = False
       }
