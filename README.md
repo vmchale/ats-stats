@@ -6,6 +6,9 @@ ATS.
 
 ## Building
 
+First, get [futhark](http://hackage.haskell.org/package/futhark) and 
+[atspkg](http://hackage.haskell.org/package/ats-pkg).
+
 To build:
 
 ```
