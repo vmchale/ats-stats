@@ -1,0 +1,2 @@
+- [ ] https://github.com/diku-dk/linalg
+- [ ] https://github.com/diku-dk/fft
