@@ -14,6 +14,12 @@ make
 atspkg build
 ```
 
+To run (excuse the lack of polish):
+
+```
+LD_LIBRARY_PATH=target/lib atspkg run
+```
+
 ## Use
 
 An example showing how to compute the mean of an array
