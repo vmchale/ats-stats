@@ -7,7 +7,7 @@ ATS.
 ## Building
 
 First, get [futhark](http://hackage.haskell.org/package/futhark) and 
-[atspkg](http://hackage.haskell.org/package/ats-pkg).
+[atspkg](http://hackage.haskell.org/package/ats-pkg). Make sure you have OpenCL.
 
 To build:
 
@@ -17,7 +17,7 @@ make
 atspkg build
 ```
 
-To run (excuse the lack of polish):
+To run:
 
 ```
 LD_LIBRARY_PATH=target/lib atspkg run
