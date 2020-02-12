@@ -25,4 +25,5 @@ LD_LIBRARY_PATH=target/lib atspkg run
 
 ## Use
 
-An example showing how to compute the mean of an array
+Find an example showing how to compute the mean of an array
+[here](https://github.com/vmchale/ats-stats/blob/master/test/spec.dats).
