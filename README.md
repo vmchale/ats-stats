@@ -13,3 +13,7 @@ futhark pkg sync
 make
 atspkg build
 ```
+
+## Use
+
+An example showing how to compute the mean of an array
