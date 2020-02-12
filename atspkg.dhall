@@ -9,6 +9,6 @@ in    prelude.default
             , gcBin = True
             }
         ]
-      , cflags = [ "-O2", "-L./target/lib", "-lfutstats", "-lOpenCL", "-lm" ]
+      , cflags = [ "-O2", "-L./target/lib", "-lfutstats", "-lfutlinalg", "-lOpenCL", "-lm" ]
       , atsLib = False
       }
