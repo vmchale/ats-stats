@@ -20,3 +20,15 @@ entry matvecmul_row_f64 = linalg_f64.matvecmul_row
 
 entry matvecmul_col_f32 = linalg_f32.matvecmul_col
 entry matvecmul_col_f64 = linalg_f64.matvecmul_col
+
+entry kronecker0_f32 = linalg_f32.kronecker'
+entry kronecker0_f64 = linalg_f64.kronecker'
+
+entry kronecker_f32 = linalg_f32.kronecker
+entry kronecker_f64 = linalg_f64.kronecker
+
+entry inv_f32 = linalg_f32.inv
+entry inv_f64 = linalg_f64.inv
+
+entry ols_f32 = linalg_f32.ols
+entry ols_f64 = linalg_f64.ols
