@@ -16,7 +16,7 @@ implement main0 () =
     var ret: float
     val _ = futhark_entry_mean_f32(ctx, ret, fut_arr0)
     val () = println!(ret)
-    (* val _ = futhark_entry_dotproduct_f32(ctx, ret, fut_arr0, fut_arr1) *)
+    val _ = futhark_entry_dotprod_f32(ctx, ret, fut_arr0, fut_arr1)
     val () = println!(ret)
     val _ = futhark_free_f32_1d(ctx, fut_arr0)
     val _ = futhark_free_f32_1d(ctx, fut_arr1)
