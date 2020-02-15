@@ -6,7 +6,7 @@ in    prelude.default
         [   prelude.bin
           ⫽ { src = "test/spec.dats"
             , target = "${prelude.atsProject}/spec"
-            , gcBin = True
+            , gcBin = False
             }
         ]
       , cflags =

@@ -4,6 +4,9 @@ SHELL := bash
 MAKEFLAGS += --warn-undefined-variables --no-builtin-rules -j
 .DELETE_ON_ERROR:
 
+target/spec: test/spec.dats target/lib/libfutstats.so target/lib/libfutlinalg.so
+	patscc -dd -DATS_MEMALLOC_LIBC $< -o $@ -L ./target/lib -lfutstats -lfutlinalg -lOpenCL -lm
+
 all: target/lib/libfutstats.so target/lib/libfutlinalg.so
 
 target/lib:
