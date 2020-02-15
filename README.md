@@ -6,8 +6,9 @@ ATS.
 
 ## Building
 
-First, get [futhark](http://hackage.haskell.org/package/futhark) and optionally
-[atspkg](http://hackage.haskell.org/package/ats-pkg). Make sure you have OpenCL.
+First, get [futhark](http://hackage.haskell.org/package/futhark) and either
+[atspkg](http://hackage.haskell.org/package/ats-pkg) or
+[ATS](http://www.ats-lang.org/Downloads.html#ATS_packages). Make sure you have OpenCL.
 
 To run (without `atspkg`):
 
