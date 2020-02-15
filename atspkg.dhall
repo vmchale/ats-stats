@@ -12,8 +12,7 @@ in    prelude.default
       , cflags =
         [ "-O2"
         , "-L./target/lib"
-        , "-lfutstats"
-        , "-lfutlinalg"
+        , "-lfut"
         , "-lOpenCL"
         , "-lm"
         ]
