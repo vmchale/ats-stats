@@ -22,4 +22,4 @@ target/include/fut.c: export.fut target/include
 	futhark opencl --library $< -o target/include/fut
 
 clean:
-	@rm -rf lib *_dats.c *_sats.c *.so *.h .atspkg target tags bug
+	@rm -rf lib *_dats.c *_sats.c *.so *.h .atspkg target tags
