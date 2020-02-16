@@ -1,10 +1,8 @@
 # Upstream
 - [ ] t-test
-- [ ] Futhark linear regression library
-- [ ] Report bug? lol
+- [x] Futhark linear regression library
+- [ ] Figure out linking/bug (?)
 # Features/ref
 - [ ] https://christophm.github.io/interpretable-ml-book/shapley.html
 - [ ] spearman rho
-- [ ] Normal makefile?
-# API
-- [ ] https://github.com/diku-dk/linalg
+- [x] Normal makefile?
