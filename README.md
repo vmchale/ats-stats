@@ -6,24 +6,15 @@ ATS.
 
 ## Building
 
-First, get [futhark](http://hackage.haskell.org/package/futhark) and either
-[atspkg](http://hackage.haskell.org/package/ats-pkg) or
+First, get [futhark](http://hackage.haskell.org/package/futhark) and
 [ATS](http://www.ats-lang.org/Downloads.html#ATS_packages). Make sure you have OpenCL.
 
-To run (without `atspkg`):
+To run:
 
 ```
 futhark pkg sync
 make
 LD_LIBRARY_PATH=target/lib ./target/spec
-```
-
-With `atspkg`:
-
-```
-futhark pkg sync
-make all
-LD_LIBRARY_PATH=target/lib atspkg run
 ```
 
 ## Use
