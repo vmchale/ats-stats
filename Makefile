@@ -3,7 +3,7 @@
 MAKEFLAGS += --warn-undefined-variables --no-builtin-rules -j
 .DELETE_ON_ERROR:
 
-target/spec: test/spec.dats target/lib/libfut.so
+target/spec: test/spec.dats target/lib/libfut.so SATS/futhark.sats SATS/futhark-types.sats
 	patscc -dd -DATS_MEMALLOC_LIBC $< -o $@ -L./target/lib -lfut -lOpenCL -lm
 
 all: target/lib/libfut.so
