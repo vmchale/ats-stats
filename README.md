@@ -17,6 +17,16 @@ make
 LD_LIBRARY_PATH=target/lib ./target/spec
 ```
 
+### Shake
+
+For slightly better dependency tracking:
+
+```
+futhark pkg sync
+./Shakefile.hs
+LD_LIBRARY_PATH=target/lib ./target/spec
+```
+
 ## Use
 
 Find an example showing how to compute the mean of an array
