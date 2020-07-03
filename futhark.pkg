@@ -1,4 +1,4 @@
 require {
   github.com/diku-dk/linalg 0.2.6 #79c6a67b4cba41642a4289abd3a44e426ba0e450
-  github.com/diku-dk/statistics 0.1.6 #52a901f1a121effd8c4433009a164cc16808d39d
+  github.com/diku-dk/statistics 0.1.7 #f39940b44782948e94e75c185d78fb54fac6edc2
 }
