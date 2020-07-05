@@ -50,6 +50,23 @@ entry kurtosis_f64 = stats_f64.kurtosis
 entry kurtosis_excess_f32 = stats_f32.kurtosis_excess
 entry kurtosis_excess_f64 = stats_f64.kurtosis_excess
 
+entry regress_f64 = stats_f64.regress
+entry regress_f32 = stats_f32.regress
+
+let regress_beta(res) =
+  let {beta, mu=_} = res
+    in beta
+
+let regress_mu(res) =
+  let {beta=_, mu} = res
+    in mu
+
+entry regress_f64_mu = regress_mu : stats_f64.regression_result -> stats_f64.t
+entry regress_f32_mu = regress_mu : stats_f32.regression_result -> stats_f32.t
+
+entry regress_f64_beta = regress_beta : stats_f64.regression_result -> stats_f64.t
+entry regress_f32_beta = regress_beta : stats_f32.regression_result -> stats_f32.t
+
 -- linalg
 entry dotprod_f32 = linalg_f32.dotprod
 entry dotprod_f64 = linalg_f64.dotprod
