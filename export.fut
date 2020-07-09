@@ -67,6 +67,9 @@ entry regress_f32_mu = regress_mu : stats_f32.regression_result -> stats_f32.t
 entry regress_f64_beta = regress_beta : stats_f64.regression_result -> stats_f64.t
 entry regress_f32_beta = regress_beta : stats_f32.regression_result -> stats_f32.t
 
+entry compute_beta_f64(xs)(ys) = regress_f64_beta (regress_f64 xs ys)
+entry compute_beta_f32(xs)(ys) = regress_f32_beta (regress_f32 xs ys)
+
 -- linalg
 entry dotprod_f32 = linalg_f32.dotprod
 entry dotprod_f64 = linalg_f64.dotprod

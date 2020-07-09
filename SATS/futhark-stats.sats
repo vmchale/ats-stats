@@ -76,6 +76,20 @@ fn futhark_entry_correlation_f64 {m:nat}( p : !futctxptr
                                         ) : int =
   "ext#"
 
+fn futhark_entry_compute_beta_f64 {m:nat}( p : !futctxptr
+                                         , out : (&double? >> _)
+                                         , inp0 : !f64_arrptr(m)
+                                         , inp1 : !f64_arrptr(m)
+                                         ) : int =
+  "ext#"
+
+fn futhark_entry_compute_beta_f32 {m:nat}( p : !futctxptr
+                                         , out : (&float? >> _)
+                                         , inp0 : !f32_arrptr(m)
+                                         , inp1 : !f32_arrptr(m)
+                                         ) : int =
+  "ext#"
+
 fn futhark_entry_skewness_f32 {m:nat}(p : !futctxptr, out : (&float? >> _), inp : !f32_arrptr(m)) : int =
   "ext#"
 
