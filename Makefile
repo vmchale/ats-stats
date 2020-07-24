@@ -3,8 +3,12 @@
 MAKEFLAGS += --warn-undefined-variables --no-builtin-rules -j
 .DELETE_ON_ERROR:
 
-target/spec: test/spec.dats target/lib/libfut.so SATS/futhark.sats SATS/futhark-types.sats
-	patscc -dd -DATS_MEMALLOC_LIBC $< -o $@ -L./target/lib -lfut -lOpenCL -lm
+target/spec: target/spec.c target/lib/libfut.so
+	gcc -DATS_MEMALLOC_LIBC $< -o $@ -I$$PATSHOME -I$$PATSHOME/ccomp/runtime -L$$PATSHOME/ccomp/atslib/lib -L./target/lib -lfut -lOpenCL -lm -latslib
+
+target/spec.c: test/spec.dats SATS/futhark.sats SATS/futhark-types.sats
+	@mkdir -p $(dir $@)
+	patsopt -dd $< > $@
 
 all: target/lib/libfut.so
 

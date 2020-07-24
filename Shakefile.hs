@@ -28,10 +28,21 @@ main = shakeArgs shakeOptions { shakeFiles = ".shake", shakeLint = Just LintBasi
     "clean" ~>
         command [] "rm" ["-rf", ".shake", "lib", "*_dats.c", "*_sats.c", "*.so", "*.h", ".atspkg", "target", "tags"]
 
-    "target/spec" %> \out -> do
+    "target/spec.c" %> \out -> do
         let inp = "test/spec.dats"
-        need . ("target/lib/libfut.so":) =<< atsDeps inp
-        command [] "patscc" ["-dd", "-DATS_MEMALLOC_LIBC", inp, "-o", out, "-L./target/lib", "-lfut", "-lOpenCL", "-lm"]
+        need =<< atsDeps inp
+        traced "dir" $ createDirectoryIfMissing True (takeDirectory out)
+        (Stdout contents) <- command [] "patsopt" ["-dd", inp]
+        traced "patsopt" $ writeFile out contents
+
+
+    "target/spec" %> \out -> do
+        let inp = "target/spec.c"
+        need [inp, "target/lib/libfut.so"]
+        (Just patsHome) <- getEnv "PATSHOME"
+        let includeFlags = fmap ("-I" ++) [patsHome </> "ccomp/runtime", patsHome]
+        command [] "gcc"
+            (["-DATS_MEMALLOC_LIBC", inp, "-o", out, "-L./target/lib", "-lfut", "-lOpenCL", "-lm", "-L" ++ patsHome </> "ccomp/atslib/lib"] ++ includeFlags)
 
     "target/lib/libfut.so" %> \out -> do
         let inp = "target/include/fut.c"
