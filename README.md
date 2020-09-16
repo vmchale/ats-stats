@@ -23,8 +23,7 @@ For slightly better dependency tracking:
 
 ```
 futhark pkg sync
-./Shakefile.hs
-LD_LIBRARY_PATH=target/lib ./target/spec
+./Shakefile.hs run
 ```
 
 ## Use

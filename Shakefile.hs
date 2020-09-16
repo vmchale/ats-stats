@@ -28,6 +28,10 @@ main = shakeArgs shakeOptions { shakeFiles = ".shake", shakeLint = Just LintBasi
     "clean" ~>
         command [] "rm" ["-rf", ".shake", "lib", "*_dats.c", "*_sats.c", "*.so", "*.h", ".atspkg", "target", "tags"]
 
+    "run" ~>
+        need ["target/spec", "target/lib/libfut.so"] *>
+        command [AddEnv "LD_LIBRARY_PATH" "./target/lib"] "./target/spec" []
+
     "target/spec.c" %> \out -> do
         let inp = "test/spec.dats"
         need =<< atsDeps inp
