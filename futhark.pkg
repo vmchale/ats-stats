@@ -1,5 +1,5 @@
 require {
   github.com/diku-dk/linalg 0.4.1 #a703fcc481819b47b172e1adf2d9878c6208757d
-  github.com/diku-dk/statistics 0.2.0 #d34f60edf000a16e8f78fd25b2c6ae498b3b7f0d
+  github.com/diku-dk/statistics 0.2.1 #ad49c009c7fb5d3059d4edca65d0e0f6b145da05
   github.com/diku-dk/sorts 0.4.2 #3b2cfcc0d0256df7cd1f2548f68d85f2453007a0
 }
